@@ -1,5 +1,10 @@
 # Constraint Coherence Benchmark
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
+[![Responses](https://img.shields.io/badge/Scored_Responses-240-orange.svg)](runs/scored_combined_all_models.json)
+[![Top Scaffold](https://img.shields.io/badge/S2_Means--End-96%25_Haiku_|_93%25_Sonnet-brightgreen.svg)](#what-we-found)
+
 Ask an LLM whether you should walk or drive to the car wash — it's only 100 meters away. Most models say walk. They forget the car needs to be there too.
 
 This is a specific, reproducible instance of a broader failure: LLMs substitute **proxy metrics** (distance, convenience, fuel cost) for the **actual goal** (getting the car washed), silently dropping an unstated physical constraint. The car must be at the car wash. You have to drive.
