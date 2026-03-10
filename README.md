@@ -1,174 +1,110 @@
 # Constraint Coherence Benchmark
 
-A benchmark for evaluating LLM reasoning failures on implicit physical constraints, with six cognitive scaffolds designed to recover correct reasoning.
+Ask an LLM whether you should walk or drive to the car wash — it's only 100 meters away. Most models say walk. They forget the car needs to be there too.
 
-## Paper
+This is a specific, reproducible instance of a broader failure: LLMs substitute **proxy metrics** (distance, convenience, fuel cost) for the **actual goal** (getting the car washed), silently dropping an unstated physical constraint. The car must be at the car wash. You have to drive.
 
-**Title:** Reasoning Architecture for Implicit Constraint Inference: A Multi-Scaffold Study  
-**Authors:** Theo Nicolas Sitjar
+We built a benchmark around this failure and tested whether structured reasoning prompts can fix it.
 
-## Overview
+## What we found
 
-Large language models frequently fail on problems requiring implicit physical constraint inference — situations where the correct answer depends on an unstated physical necessity (e.g., a car must be physically present at a car wash to be washed). This benchmark measures how different reasoning scaffolds affect LLM performance on such tasks.
-
-**Key finding:** Means-end analysis (backward goal chaining) achieves 96% accuracy on Haiku and 93% on Sonnet, compared to 24% and 7% for unscaffolded control — a statistically significant improvement (Fisher's exact test, p < 0.001 for both models).
-
-## Dataset
-
-| Component | Details |
-|-----------|---------|
-| **Tests** | 5 variants of vehicle-at-destination constraint |
-| **Scaffolds** | 6 reasoning frameworks (S0–S5) |
-| **Models** | Claude Haiku 4.5, Claude Sonnet 4.5 |
-| **Runs** | 5 (Haiku), 3 (Sonnet) |
-| **Total** | 240 scored responses |
-| **Validation** | Manual annotation (n=30), Cohen's κ = 0.786 |
-
-### Test Suite
-
-| ID | Scenario | Distance |
-|----|----------|----------|
-| T1 | Car wash | 100m |
-| T2 | Drive-through emissions test | 180m |
-| T3 | Tire air pump refill | 120m |
-| T4 | Electric car charging bay | 140m |
-| T5 | Rental car return lane | 250m |
-
-### Reasoning Scaffolds
-
-| ID | Name | Strategy |
-|----|------|----------|
-| S0 | Control | No scaffold (bare prompt) |
-| S1 | Constraints-first | List hard constraints before optimizing |
-| S2 | Means-end analysis | Backward chaining from goal state |
-| S3 | Attribute substitution check | Test for proxy metric substitution |
-| S4 | Embodied simulation | Mental simulation of physical actions |
-| S5 | Systems causal map | Causal system with entity interactions |
-
-## Results
-
-### Pass Rates by Scaffold
+Six reasoning scaffolds, five test scenarios, two Claude models, 240 scored responses.
 
 ![Pass rates by scaffold with 95% confidence intervals](paper/figures/scaffold_pass_rate.png)
 
-| Scaffold | Haiku 4.5 (n=25) | 95% CI | Sonnet 4.5 (n=15) | 95% CI |
-|----------|-------------------|--------|---------------------|--------|
-| S0 (Control) | 24% | [0.09, 0.45] | 7% | [0.00, 0.32] |
-| S1 (Constraints-first) | 44% | [0.24, 0.65] | 53% | [0.27, 0.79] |
-| **S2 (Means-end)** | **96%** | [0.80, 1.00] | **93%** | [0.68, 1.00] |
-| S3 (Attribute sub.) | 32% | [0.15, 0.54] | 80% | [0.52, 0.96] |
-| S4 (Embodied sim.) | 80% | [0.59, 0.93] | 67% | [0.38, 0.88] |
-| S5 (Systems causal) | 88% | [0.69, 0.97] | 73% | [0.45, 0.92] |
+**One scaffold dominates.** Means-end analysis — forcing the model to define the goal state and work backward to its preconditions — achieves **96% on Haiku** and **93% on Sonnet**. The unscaffolded control sits at 24% and 7%. That's an odds ratio of 76–196 (Fisher's exact, p < 0.001).
 
-### Statistical Significance (Fisher's Exact Test, S2 vs S0)
+**Not all scaffolds help.** Telling the model to check whether it's optimizing a proxy metric (S3) actually fails to improve performance on Haiku (32% vs 24% control, p = 0.754). Asking a model to watch out for exactly the mistake it's making doesn't work — it may even reinforce the error.
 
-| Model | Odds Ratio | p-value | Significant |
-|-------|-----------|---------|-------------|
-| Haiku 4.5 | 76.0 | < 0.001 | *** |
-| Sonnet 4.5 | 196.0 | < 0.001 | *** |
+**The mechanism is backward chaining.** The model fails because it reasons forward: short distance → walking is practical → walk. Means-end analysis forces it to reason backward: goal is car-at-wash → car must be driven there → drive. This independently converges with Jo (2026), who found that STAR's Task step — a different formalism for the same backward-chaining mechanism — achieves 85% on Sonnet.
 
-95% confidence intervals: Clopper-Pearson exact binomial method.
+| Scaffold | Haiku 4.5 (n=25) | Sonnet 4.5 (n=15) |
+|----------|:-:|:-:|
+| S0 — Control | 24% | 7% |
+| S1 — Constraints-first | 44% | 53% |
+| **S2 — Means-end analysis** | **96%** | **93%** |
+| S3 — Attribute substitution | 32% | 80% |
+| S4 — Embodied simulation | 80% | 67% |
+| S5 — Systems causal map | 88% | 73% |
 
-### Cross-Model Heatmap
+### What the heatmap reveals
 
 ![Test × Scaffold pass rate heatmap](paper/figures/heatmap.png)
 
-### Run-to-Run Consistency
+S2 achieves near-ceiling performance across all five test variants. S3's dramatic model split (32% Haiku vs 80% Sonnet) suggests metacognitive scaffolds interact differently with model capacity. S4 and S5 are effective but show more variance.
+
+### Stability across runs
 
 ![Pass rates across independent runs](paper/figures/run_consistency.png)
 
-## Repository Structure
+## The five test scenarios
 
-```
-├── data/
-│   ├── tests.json              # 5 test prompts
-│   └── scaffolds.json          # 5 reasoning scaffolds (S1–S5)
-├── runs/
-│   └── scored_combined_all_models.json  # 240 scored results
-├── analysis/
-│   ├── scaffold_stats.csv      # Pass rates + CIs per scaffold per model
-│   └── fisher_test_results.json # Fisher's exact test results
-├── validation/
-│   ├── ANNOTATION_GUIDE.md     # Manual annotation rubric
-│   ├── validation_sample.jsonl # 30-item stratified sample
-│   ├── manual_annotations.jsonl # Human annotations
-│   ├── agreement_results.json  # Inter-rater agreement (κ = 0.786)
-│   └── calculate_agreement.py  # Agreement calculation script
-├── paper/
-│   ├── tables/                 # LaTeX tables
-│   └── figures/                # Charts (PNG)
-├── run_benchmark.py             # Benchmark runner (OpenRouter / custom provider)
-├── score_results.py            # Automated scoring script
-├── stats_analysis.py           # Statistical analysis (CIs + Fisher)
-├── generate_charts.py          # Figure generation
-├── generate_results_table.py   # LaTeX table generation
-├── requirements.txt
-└── LICENSE
-```
+Each scenario requires a vehicle to be physically present at a destination. The constraint is never stated — the model must infer it.
 
-## Quick Start
+| ID | Scenario | Distance | Why models fail |
+|----|----------|:--------:|-----------------|
+| T1 | Car wash | 100m | Classic: distance heuristic overwhelms goal analysis |
+| T2 | Drive-through emissions test | 180m | "Drive-through" in the name, yet models still say walk |
+| T3 | Tire air pump | 120m | Car needs to be at the pump — not just you |
+| T4 | EV charging bay | 140m | Must plug the car in, can't carry it |
+| T5 | Rental car return lane | 250m | Must return the car, not yourself |
+
+## The six scaffolds
+
+| ID | Strategy | What it does |
+|----|----------|-------------|
+| S0 | Control | Bare prompt, no scaffolding |
+| S1 | Constraints-first | "List all hard constraints before deciding" |
+| S2 | Means-end analysis | "Define the goal state. Work backward to preconditions." |
+| S3 | Attribute substitution | "Check: are you optimizing a proxy metric?" |
+| S4 | Embodied simulation | "Mentally simulate each option step by step" |
+| S5 | Systems causal map | "Map entities, relationships, and causal chains" |
+
+## Run it yourself
 
 ```bash
-# Install dependencies
 pip install -r requirements.txt
 
-# Reproduce statistical analysis
+# Run the benchmark with any OpenRouter model
+OPENROUTER_API_KEY=sk-... python3 run_benchmark.py --model meta-llama/llama-3.3-70b-instruct:free
+
+# Score results
+python3 score_results.py
+
+# Reproduce stats + charts
 python3 stats_analysis.py
-
-# Regenerate LaTeX tables
-python3 generate_results_table.py
-
-# Regenerate figures
 python3 generate_charts.py
 ```
 
-### Running the benchmark
+## Scoring
 
-```bash
-# Using OpenRouter (default provider)
-OPENROUTER_API_KEY=sk-... python3 run_benchmark.py --model meta-llama/llama-3.3-70b-instruct:free
+Each response is scored on whether the model:
+1. **Detected** the implicit constraint (car must be at destination)
+2. **Rejected** the infeasible option (walking)
+3. **Recommended** the correct action (driving)
 
-# Using a custom provider (e.g. Zo API)
-python3 run_benchmark.py --provider zo --model haiku
+**Strict pass** = all three. Automated scoring validated against manual annotation (n=30, Cohen's κ = 0.786).
+
+## Repository structure
+
 ```
-
-The benchmark runner supports OpenRouter out of the box. For custom providers, create an adapter module (see `run_benchmark.py` for the interface).
-
-## Scoring Rubric
-
-Each response is scored on five binary metrics:
-
-1. **nc_detected** — Did the model identify the implicit necessary condition (vehicle must be at destination)?
-2. **infeasible_option_rejected** — Did it explicitly reject the infeasible option (walking)?
-3. **goal_achieved_by_recommendation** — Does the final recommendation achieve the goal (drive)?
-4. **proxy_drift_present** — Did the model optimize a proxy metric instead of the actual goal?
-5. **error_severity** (0–3) — 0 = correct, 1 = ambiguous, 2 = clear miss, 3 = confidently wrong
-
-**Strict pass** requires: `nc_detected=1 AND infeasible_option_rejected=1 AND goal_achieved=1`
-
-## Paper Preview
-
-**Reasoning Architecture for Implicit Constraint Inference: A Multi-Scaffold Study**
-
-Large language models consistently fail on tasks requiring implicit physical constraint inference — recognizing that a car must be physically present at a car wash to be washed, even when the car wash is only 100 meters away. We introduce the Constraint Coherence Benchmark: 5 structurally isomorphic test scenarios evaluated under 6 reasoning scaffolds drawn from cognitive science.
-
-Our central finding is that **means-end analysis** (backward chaining from the goal state to its physical preconditions) nearly eliminates the failure, achieving 96% on Claude Haiku 4.5 and 93% on Claude Sonnet 4.5 — compared to 24% and 7% under unscaffolded control. This converges with independent findings by Jo (2026), who showed that STAR's Task step — which implements the same backward-chaining mechanism through a different formalism — achieves 85% on Sonnet.
-
-We also document that **not all scaffolds help**: attribute-substitution checking (S3) fails to improve Haiku performance (32% vs 24% control, p = 0.754), suggesting that metacognitive prompts can reinforce rather than correct proxy-metric reasoning in smaller models.
-
-Full paper available upon request.
+data/           Tests and scaffold prompts
+runs/           240 scored responses (JSON)
+analysis/       Pass rates, CIs, Fisher test results
+validation/     Manual annotation sample + agreement stats
+paper/          Figures (PNG) and LaTeX tables
+```
 
 ## Citation
 
 ```bibtex
 @misc{constraintcoherence2026,
-  title={Reasoning Architecture for Implicit Constraint Inference: A Multi-Scaffold Study},
-  author={Sitjar, Theo Nicolas},
+  title={Constraint Coherence Benchmark: Recovering Implicit Physical Reasoning in LLMs via Cognitive Scaffolds},
   year={2026},
-  note={Preprint}
+  note={https://github.com/tns-research/constraint-coherence}
 }
 ```
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT
