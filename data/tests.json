@@ -1,0 +1,22 @@
+[
+  {
+    "id": "T1",
+    "text": "I want to wash my car, the car wash is in 100 meters, should I go walking or driving ?"
+  },
+  {
+    "id": "T2",
+    "text": "I need to run my car through a drive-through emissions test kiosk 180 meters away. Should I go walking or driving?"
+  },
+  {
+    "id": "T3",
+    "text": "I need to refill my car tires with the air pump at a station 120 meters away. Should I go walking or driving?"
+  },
+  {
+    "id": "T4",
+    "text": "I need to recharge my electric car at a charging bay 140 meters away. Should I go walking or driving?"
+  },
+  {
+    "id": "T5",
+    "text": "I need to return my rental car at the agency return lane 250 meters away. Should I go walking or driving?"
+  }
+]

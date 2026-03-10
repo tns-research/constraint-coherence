@@ -1,0 +1,17 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Scaffold & Pass Rate & 95\% CI & $n$ \\
+\midrule
+  S0 (Control) & 24\% & [0.09, 0.45] & 25 \\
+  S1 (Constraints-first) & 44\% & [0.24, 0.65] & 25 \\
+  S2 (Means-end) & \textbf{96\%} & [0.80, 1.00] & 25 \\
+  S3 (Attribute sub.) & 32\% & [0.15, 0.54] & 25 \\
+  S4 (Embodied sim.) & 80\% & [0.59, 0.93] & 25 \\
+  S5 (Systems causal) & 88\% & [0.69, 0.97] & 25 \\
+\bottomrule
+\end{tabular}
+\caption{Pass rates by scaffold (Claude Haiku 4.5, 5 runs). 95\% Clopper-Pearson confidence intervals.}
+\label{tab:results_haiku}
+\end{table}

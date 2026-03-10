@@ -1,0 +1,17 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Scaffold & Pass Rate & 95\% CI & $n$ \\
+\midrule
+  S0 (Control) & 7\% & [0.00, 0.32] & 15 \\
+  S1 (Constraints-first) & 53\% & [0.27, 0.79] & 15 \\
+  S2 (Means-end) & \textbf{93\%} & [0.68, 1.00] & 15 \\
+  S3 (Attribute sub.) & 80\% & [0.52, 0.96] & 15 \\
+  S4 (Embodied sim.) & 67\% & [0.38, 0.88] & 15 \\
+  S5 (Systems causal) & 73\% & [0.45, 0.92] & 15 \\
+\bottomrule
+\end{tabular}
+\caption{Pass rates by scaffold (Claude Sonnet 4.5, 3 runs). 95\% Clopper-Pearson confidence intervals.}
+\label{tab:results_sonnet}
+\end{table}
