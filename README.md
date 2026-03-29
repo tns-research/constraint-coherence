@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
 [![Responses](https://img.shields.io/badge/Scored_Responses-504-orange.svg)](runs/scored_combined_all_models.json)
-[![Top Scaffold](https://img.shields.io/badge/S2_Means--End-96%25_Haiku_|_93%25_Sonnet-brightgreen.svg)](#what-we-found)
+[![T6 Backfire](https://img.shields.io/badge/T6_Scaffolds-Backfire-red.svg)](#when-scaffolds-backfire-t6)
 
 Ask an LLM whether you should walk or drive to the car wash — it's only 100 meters away. Most models say walk. They forget the car needs to be there too.
 
@@ -11,40 +11,69 @@ This is a specific, reproducible instance of a broader failure: LLMs substitute 
 
 We built a benchmark around this failure and tested whether structured reasoning prompts can fix it.
 
+They do, dramatically, on forward-constraint problems. But when we invert the constraint structure, the same scaffolds backfire: they make the model more confidently wrong.
+
 ## What we found
 
-Six reasoning scaffolds, six test scenarios (five forward + one inverse), two Claude models, 504 scored responses across T1--T6.
+Six reasoning scaffolds, six test scenarios (five forward + one inverse), two Claude models, 504 scored responses across T1-T6.
 
 ![Pass rates by scaffold with 95% confidence intervals](paper/figures/scaffold_pass_rate.png)
 
-**One scaffold dominates.** Means-end analysis — forcing the model to define the goal state and work backward to its preconditions — achieves **96% on Haiku** and **93% on Sonnet**. The unscaffolded control sits at 24% and 7%. That's an odds ratio of 76–196 (Fisher's exact, p < 0.001).
+**One scaffold dominates.** Means-end analysis — forcing the model to define the goal state and work backward to its preconditions — achieves **96% on Haiku** and **87% on Sonnet**. The unscaffolded control sits at 32% and 20% (Fisher's exact, p < 0.001).
 
 **Not all scaffolds help.** Telling the model to check whether it's optimizing a proxy metric (S3) actually fails to improve performance on Haiku (32% vs 24% control, p = 0.754). Asking a model to watch out for exactly the mistake it's making doesn't work — it may even reinforce the error.
 
 **The mechanism is backward chaining.** The model fails because it reasons forward: short distance → walking is practical → walk. Means-end analysis forces it to reason backward: goal is car-at-wash → car must be driven there → drive. This independently converges with Jo (2026), who found that STAR's Task step — a different formalism for the same backward-chaining mechanism — achieves 85% on Sonnet.
 
-| Scaffold | Haiku 4.5 (n=25) | Sonnet 4.5 (n=15) |
+| Scaffold | Haiku 4.5 (n=25) | Sonnet 4.6 (n=19) |
 |----------|:-:|:-:|
-| S0 — Control | 24% | 7% |
-| S1 — Constraints-first | 44% | 53% |
-| **S2 — Means-end analysis** | **96%** | **93%** |
-| S3 — Attribute substitution | 32% | 80% |
-| S4 — Embodied simulation | 80% | 67% |
-| S5 — Systems causal map | 88% | 73% |
+| S0 - Control | 32% | 20% |
+| S1 - Constraints-first | 44% | 60% |
+| **S2 - Means-end analysis** | **96%** | **87%** |
+| S3 - Attribute substitution | 32% | 100% |
+| S4 - Embodied simulation | 80% | 73% |
+| S5 - Systems causal map | 88% | 80% |
 
 ### What the heatmap reveals
 
 ![Test × Scaffold pass rate heatmap](paper/figures/heatmap.png)
 
-S2 achieves near-ceiling performance across all five test variants. S3's dramatic model split (32% Haiku vs 80% Sonnet) suggests metacognitive scaffolds interact differently with model capacity. S4 and S5 are effective but show more variance.
+S2 achieves near-ceiling performance across all five test variants. S3's dramatic model split (32% Haiku vs 100% Sonnet) suggests metacognitive scaffolds interact differently with model capacity. S4 and S5 are effective but show more variance.
 
 ### Stability across runs
 
 ![Pass rates across independent runs](paper/figures/run_consistency.png)
 
+## When scaffolds backfire: T6
+
+T6 inverts the constraint. Your parking meter expires in 3 minutes. The meter machine is 400 meters away. Should you walk or drive? Driving vacates your parking spot, so the correct answer is **walk**.
+
+On T1-T5, scaffolds push Haiku from 32% to 96%. On T6, they push it from 36% **down to 8%**.
+
+![T1-T5 vs T6 performance inversion](paper/figures_v3/fig1_inversion.png)
+
+The best T1-T5 scaffold (S2, means-end analysis) becomes the worst on T6. It forces backward chaining from the goal, but never questions whether the sub-goals preserve the goal's preconditions. We call this a **reasoning tunnel**.
+
+| Scaffold | Haiku T6 Walk% (n=25) | Sonnet T6 Walk% (n=19) |
+|----------|:-:|:-:|
+| **S0 - Control** | **36%** | 11% |
+| S1 - Constraints-first | 12% | 11% |
+| S2 - Means-end analysis | 8% | 11% |
+| S3 - Attribute substitution | 24% | 11% |
+| S4 - Embodied simulation | 16% | 11% |
+| S5 - Systems causal map | 20% | 5% |
+
+Scaffolds don't just fail to help on T6. They convert uncertainty into confident error:
+
+![Response distribution showing scaffold-induced confidence in wrong answers](paper/figures_v3/fig5_ambiguity.png)
+
+Under S0, Haiku produces 9 walk, 12 drive, and 4 ambiguous responses. Under S2, it shifts to 2 walk, 19 drive, 4 ambiguous. The scaffold eliminates hedging and locks in the wrong answer.
+
+![Gain on T1-T5 vs loss on T6 per scaffold](paper/figures_v3/fig2_gain_loss_scatter.png)
+
 ## The six test scenarios
 
-Tests T1--T5 require the vehicle to be physically present at a destination (correct answer: **drive**). T6 inverts the constraint: the vehicle must *stay* at its current location (correct answer: **walk**). In every case the constraint is never stated — the model must infer it.
+Tests T1-T5 require the vehicle to be physically present at a destination (correct answer: **drive**). T6 inverts the constraint: the vehicle must *stay* at its current location (correct answer: **walk**). In every case the constraint is never stated — the model must infer it.
 
 | ID | Scenario | Distance | Correct | Why models fail |
 |----|----------|:--------:|:-------:|-----------------|
@@ -57,9 +86,9 @@ Tests T1--T5 require the vehicle to be physically present at a destination (corr
 
 ### T6 — The inverse test
 
-T6 tests whether models truly reason about constraints or merely memorize the T1--T5 pattern. Your parking meter expires in 3 minutes and the meter machine is 400 meters away. Most models say drive — it's faster. But driving means leaving the parking spot, making the paid extension worthless. The correct answer is **walk**: you arrive late but the car keeps its spot.
+T6 tests whether models truly reason about constraints or merely memorize the T1-T5 pattern. Your parking meter expires in 3 minutes and the meter machine is 400 meters away. Most models say drive — it's faster. But driving means leaving the parking spot, making the paid extension worthless. The correct answer is **walk**: you arrive late but the car keeps its spot.
 
-This is the mirror image of T1--T5. Where T1--T5 test for *object-must-reach-destination*, T6 tests for *object-must-stay-at-origin*. Early results show that scaffolds effective on T1--T5 largely fail on T6: models that learned "the car must be there" don't generalize to "the car must stay here." Detailed T6 statistics are in `analysis/scaffold_stats_t6.csv` and `analysis/fisher_test_results_t6.json`.
+This is the mirror image of T1-T5. Where T1-T5 test for *object-must-reach-destination*, T6 tests for *object-must-stay-at-origin*. Scaffolds effective on T1-T5 systematically fail on T6: models that learned "the car must be there" don't generalize to "the car must stay here." Detailed T6 statistics are in `analysis/scaffold_stats_t6.csv` and `analysis/fisher_test_results_t6.json`.
 
 ## The six scaffolds
 
@@ -94,11 +123,11 @@ python3 generate_charts.py
 ## Scoring
 
 Each response is scored on whether the model:
-1. **Detected** the implicit constraint (car must be at destination for T1--T5; car must stay at origin for T6)
-2. **Rejected** the infeasible option (walking for T1--T5; driving for T6)
-3. **Recommended** the correct action (driving for T1--T5; walking for T6)
+1. **Detected** the implicit constraint (car must be at destination for T1-T5; car must stay at origin for T6)
+2. **Rejected** the infeasible option (walking for T1-T5; driving for T6)
+3. **Recommended** the correct action (driving for T1-T5; walking for T6)
 
-**Strict pass** = all three. Scoring is bidirectional: `correct_answer` is read from `data/tests.json` per test, so the scorer handles both constraint directions automatically. Automated scoring validated against manual annotation (n=30, Cohen's kappa = 0.786).
+**Strict pass** = all three. Scoring is bidirectional: `correct_answer` is read from `data/tests.json` per test, so the scorer handles both constraint directions automatically. Automated scoring validated against manual annotation (T1-T5: Cohen's kappa = 0.786; T6: kappa = 0.631).
 
 ## Repository structure
 
@@ -114,7 +143,7 @@ paper/          Figures (PNG) and LaTeX tables
 
 ```bibtex
 @misc{constraintcoherence2026,
-  title={Constraint Coherence Benchmark: Recovering Implicit Physical Reasoning in LLMs via Cognitive Scaffolds},
+  title={When Reasoning Scaffolds Backfire: Structured Prompting Creates Systematic Failure Under Constraint Inversion},
   year={2026},
   note={https://github.com/tns-research/constraint-coherence}
 }
