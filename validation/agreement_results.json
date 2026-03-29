@@ -1,0 +1,30 @@
+{
+  "n_samples": 30,
+  "per_metric": {
+    "nc_detected": {
+      "kappa": 0.927,
+      "agreement_pct": 96.7
+    },
+    "infeasible_option_rejected": {
+      "kappa": 0.8,
+      "agreement_pct": 90.0
+    },
+    "goal_achieved_by_recommendation": {
+      "kappa": 0.78,
+      "agreement_pct": 90.0
+    },
+    "proxy_drift_present": {
+      "kappa": 0.672,
+      "agreement_pct": 90.0
+    },
+    "error_severity": {
+      "kappa": 0.737,
+      "agreement_pct": 83.3
+    },
+    "strict_pass": {
+      "kappa": 0.8,
+      "agreement_pct": 90.0
+    }
+  },
+  "overall_kappa": 0.786
+}

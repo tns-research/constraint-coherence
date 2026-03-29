@@ -1,0 +1,172 @@
+{
+  "s2_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S2 vs S0",
+    "contingency_table": [
+      [
+        25,
+        25
+      ],
+      [
+        8,
+        42
+      ]
+    ],
+    "odds_ratio": 5.25,
+    "p_value": 0.0005560330234769427,
+    "significant_005": true
+  },
+  "s2_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S2 vs S0",
+    "contingency_table": [
+      [
+        16,
+        18
+      ],
+      [
+        1,
+        33
+      ]
+    ],
+    "odds_ratio": 29.333333333333332,
+    "p_value": 3.437850468014437e-05,
+    "significant_005": true
+  },
+  "s1_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S1 vs S0",
+    "contingency_table": [
+      [
+        11,
+        39
+      ],
+      [
+        8,
+        42
+      ]
+    ],
+    "odds_ratio": 1.4807692307692308,
+    "p_value": 0.6110593016041338,
+    "significant_005": false
+  },
+  "s3_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S3 vs S0",
+    "contingency_table": [
+      [
+        9,
+        41
+      ],
+      [
+        8,
+        42
+      ]
+    ],
+    "odds_ratio": 1.1524390243902438,
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "s4_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S4 vs S0",
+    "contingency_table": [
+      [
+        23,
+        27
+      ],
+      [
+        8,
+        42
+      ]
+    ],
+    "odds_ratio": 4.472222222222222,
+    "p_value": 0.0021844046200502534,
+    "significant_005": true
+  },
+  "s5_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S5 vs S0",
+    "contingency_table": [
+      [
+        25,
+        25
+      ],
+      [
+        8,
+        42
+      ]
+    ],
+    "odds_ratio": 5.25,
+    "p_value": 0.0005560330234769427,
+    "significant_005": true
+  },
+  "s1_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S1 vs S0",
+    "contingency_table": [
+      [
+        9,
+        25
+      ],
+      [
+        1,
+        33
+      ]
+    ],
+    "odds_ratio": 11.88,
+    "p_value": 0.013169080963617592,
+    "significant_005": true
+  },
+  "s3_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S3 vs S0",
+    "contingency_table": [
+      [
+        14,
+        20
+      ],
+      [
+        1,
+        33
+      ]
+    ],
+    "odds_ratio": 23.1,
+    "p_value": 0.00022172374698071923,
+    "significant_005": true
+  },
+  "s4_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S4 vs S0",
+    "contingency_table": [
+      [
+        12,
+        22
+      ],
+      [
+        1,
+        33
+      ]
+    ],
+    "odds_ratio": 18.0,
+    "p_value": 0.0012478684196650723,
+    "significant_005": true
+  },
+  "s5_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S5 vs S0",
+    "contingency_table": [
+      [
+        12,
+        22
+      ],
+      [
+        1,
+        33
+      ]
+    ],
+    "odds_ratio": 18.0,
+    "p_value": 0.0012478684196650723,
+    "significant_005": true
+  }
+}

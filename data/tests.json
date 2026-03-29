@@ -1,0 +1,39 @@
+[
+  {
+    "id": "T1",
+    "text": "I want to wash my car, the car wash is in 100 meters, should I go walking or driving ?",
+    "correct_answer": "drive",
+    "constraint_type": "object_must_reach_destination"
+  },
+  {
+    "id": "T2",
+    "text": "I need to run my car through a drive-through emissions test kiosk 180 meters away. Should I go walking or driving?",
+    "correct_answer": "drive",
+    "constraint_type": "object_must_reach_destination"
+  },
+  {
+    "id": "T3",
+    "text": "I need to refill my car tires with the air pump at a station 120 meters away. Should I go walking or driving?",
+    "correct_answer": "drive",
+    "constraint_type": "object_must_reach_destination"
+  },
+  {
+    "id": "T4",
+    "text": "I need to recharge my electric car at a charging bay 140 meters away. Should I go walking or driving?",
+    "correct_answer": "drive",
+    "constraint_type": "object_must_reach_destination"
+  },
+  {
+    "id": "T5",
+    "text": "I need to return my rental car at the agency return lane 250 meters away. Should I go walking or driving?",
+    "correct_answer": "drive",
+    "constraint_type": "object_must_reach_destination"
+  },
+  {
+    "id": "T6",
+    "text": "My parking meter expires in 3 minutes. The meter machine is 400 meters away. There is no parking app available. You must choose one: should I walk or drive to extend my parking time?",
+    "correct_answer": "walk",
+    "constraint_type": "object_must_stay_at_origin",
+    "note": "Inverse of T1-T5: driving vacates the parking spot, making the goal (keep spot + add time) impossible. Walking arrives late but preserves the spot."
+  }
+]

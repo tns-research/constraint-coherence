@@ -1,0 +1,162 @@
+{
+  "S1_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S1 vs S0",
+    "contingency": [
+      [
+        1,
+        6
+      ],
+      [
+        0,
+        7
+      ]
+    ],
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "S2_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S2 vs S0",
+    "contingency": [
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ]
+    ],
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "S3_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S3 vs S0",
+    "contingency": [
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ]
+    ],
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "S4_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S4 vs S0",
+    "contingency": [
+      [
+        1,
+        5
+      ],
+      [
+        0,
+        7
+      ]
+    ],
+    "p_value": 0.46153846153846156,
+    "significant_005": false
+  },
+  "S5_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S5 vs S0",
+    "contingency": [
+      [
+        1,
+        5
+      ],
+      [
+        0,
+        7
+      ]
+    ],
+    "p_value": 0.46153846153846156,
+    "significant_005": false
+  },
+  "S1_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S1 vs S0",
+    "contingency": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "S2_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S2 vs S0",
+    "contingency": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "S3_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S3 vs S0",
+    "contingency": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "S4_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S4 vs S0",
+    "contingency": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "S5_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S5 vs S0",
+    "contingency": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "p_value": 1.0,
+    "significant_005": false
+  }
+}
