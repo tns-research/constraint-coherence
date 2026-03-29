@@ -40,9 +40,15 @@ Six reasoning scaffolds, six test scenarios (five forward + one inverse), two Cl
 
 S2 achieves near-ceiling performance across all five test variants. S3's dramatic model split (32% Haiku vs 100% Sonnet) suggests metacognitive scaffolds interact differently with model capacity. S4 and S5 are effective but show more variance.
 
-### Stability across runs
+### Stability across runs (T1-T5)
 
-![Pass rates across independent runs](paper/figures/run_consistency.png)
+![Pass rates across independent runs for T1-T5](paper/figures/run_consistency_t1t5.png)
+
+### Stability across runs (T6)
+
+Each T6 run is a single test, so pass rate is binary (0% or 100%). The chart shows which runs passed for each scaffold.
+
+![Pass rates across independent runs for T6](paper/figures/run_consistency_t6.png)
 
 ## When scaffolds backfire: T6
 
