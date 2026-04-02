@@ -1,0 +1,70 @@
+{"sample_id": 1, "run": 1, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true}
+{"sample_id": 2, "run": 3, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true}
+{"sample_id": 3, "run": 5, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true}
+{"sample_id": 4, "run": 15, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true}
+{"sample_id": 5, "run": 2, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true}
+{"sample_id": 6, "run": 3, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true}
+{"sample_id": 7, "run": 10, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "walk", "agree": false}
+{"sample_id": 8, "run": 22, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true}
+{"sample_id": 9, "run": 2, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "ambiguous", "agree": false}
+{"sample_id": 10, "run": 5, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "walk", "agree": false}
+{"sample_id": 11, "run": 12, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "walk", "agree": false}
+{"sample_id": 12, "run": 1, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true}
+{"sample_id": 13, "run": 3, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "drive", "agree": false}
+{"sample_id": 14, "run": 15, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true}
+{"sample_id": 15, "run": 1, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "walk", "agree": false}
+{"sample_id": 16, "run": 4, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true}
+{"sample_id": 17, "run": 5, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true}
+{"sample_id": 18, "run": 1, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true}
+{"sample_id": 19, "run": 3, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "walk", "agree": false}
+{"sample_id": 20, "run": 7, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true}
+{"sample_id": 21, "run": 10, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 22, "run": 12, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "drive", "agree": false, "source": "batch_50"}
+{"sample_id": 23, "run": 14, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 24, "run": 18, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 25, "run": 20, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 26, "run": 23, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true, "source": "batch_50"}
+{"sample_id": 27, "run": 6, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "walk", "agree": false, "source": "batch_50"}
+{"sample_id": 28, "run": 9, "scaffold": "S0", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 29, "run": 1, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 30, "run": 12, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "ambiguous", "agree": true, "source": "batch_50"}
+{"sample_id": 31, "run": 16, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 32, "run": 19, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 33, "run": 21, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "ambiguous", "agree": true, "source": "batch_50"}
+{"sample_id": 34, "run": 24, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 35, "run": 5, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 36, "run": 9, "scaffold": "S1", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "ambiguous", "agree": true, "source": "batch_50"}
+{"sample_id": 37, "run": 1, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 38, "run": 11, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 39, "run": 14, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 40, "run": 17, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 41, "run": 20, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 42, "run": 23, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 43, "run": 3, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 44, "run": 7, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 45, "run": 9, "scaffold": "S2", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true, "source": "batch_50"}
+{"sample_id": 46, "run": 10, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 47, "run": 13, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true, "source": "batch_50"}
+{"sample_id": 48, "run": 17, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "drive", "agree": false, "source": "batch_50"}
+{"sample_id": 49, "run": 2, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 50, "run": 22, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 51, "run": 25, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true, "source": "batch_50"}
+{"sample_id": 52, "run": 6, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true, "source": "batch_50"}
+{"sample_id": 53, "run": 8, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 54, "run": 9, "scaffold": "S3", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 55, "run": 10, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 56, "run": 13, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 57, "run": 16, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "drive", "agree": false, "source": "batch_50"}
+{"sample_id": 58, "run": 19, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true, "source": "batch_50"}
+{"sample_id": 59, "run": 21, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 60, "run": 24, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 61, "run": 6, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 62, "run": 9, "scaffold": "S4", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "drive", "agree": false, "source": "batch_50"}
+{"sample_id": 63, "run": 13, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 64, "run": 17, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "ambiguous", "manual_label": "drive", "agree": false, "source": "batch_50"}
+{"sample_id": 65, "run": 2, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 66, "run": 22, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true, "source": "batch_50"}
+{"sample_id": 67, "run": 25, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "drive", "agree": false, "source": "batch_50"}
+{"sample_id": 68, "run": 6, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 69, "run": 8, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "drive", "manual_label": "drive", "agree": true, "source": "batch_50"}
+{"sample_id": 70, "run": 9, "scaffold": "S5", "test_id": "T6", "model": "haiku-4.5", "auto_label": "walk", "manual_label": "walk", "agree": true, "source": "batch_50"}
