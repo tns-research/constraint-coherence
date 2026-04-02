@@ -11,13 +11,13 @@
     },
     "n70_combined": {
       "n": 70,
-      "kappa": 0.702,
-      "kappa_binary": 0.926,
+      "kappa": 0.639,
+      "kappa_binary": 0.875,
       "interpretation": "Substantial (Landis & Koch 1977)",
       "source": "T6_VALIDATION.md (eng/), 20 expert + 50 additional manual reads",
       "note": "Individual annotations for the 50-sample extension are documented in T6_VALIDATION.md summary; structured JSONL covers the 20-sample subset only"
     }
   },
-  "paper_uses": "n70_combined (kappa=0.702)",
-  "key_finding": "Primary scorer weakness is over-classifying as ambiguous, not misclassifying walk<->drive. Binary kappa (0.926) confirms directional patterns are robust."
+  "paper_uses": "n70_combined (kappa=0.639)",
+  "key_finding": "Primary scorer weakness is over-classifying as ambiguous, not misclassifying walk<->drive. Binary kappa (0.875) confirms directional patterns are robust."
 }
