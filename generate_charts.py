@@ -54,7 +54,7 @@ CB_YELLOW = "#F0E442"
 CB_BLACK = "#000000"
 
 SCAFFOLD_PALETTE = [CB_BLUE, CB_CYAN, CB_GREEN, CB_RED, CB_ORANGE, CB_PURPLE]
-MODEL_PALETTE = {"haiku-4.5": CB_BLUE, "sonnet-4.5": CB_ORANGE}
+MODEL_PALETTE = {"haiku-4.5": CB_BLUE, "sonnet-4.6": CB_ORANGE}
 
 # ── Labels ──
 SCAFFOLD_LABELS = {
@@ -120,7 +120,7 @@ with open(ROOT / "runs" / "scored_combined_all_models.json") as f:
     all_results = json.load(f)
 
 haiku_results = [r for r in all_results if r["model"] == "haiku-4.5"]
-sonnet_results = [r for r in all_results if r["model"] == "sonnet-4.5"]
+sonnet_results = [r for r in all_results if r["model"] == "sonnet-4.6"]
 
 stats_df = pd.read_csv(ROOT / "analysis" / "scaffold_stats.csv")
 
@@ -139,8 +139,8 @@ def fig1_scaffold_pass_rate():
     haiku_df = stats_df[stats_df["model"] == "haiku"]
     sonnet_df = stats_df[stats_df["model"] == "sonnet"]
 
-    haiku_rates = [haiku_df[haiku_df["scaffold"] == s]["pass_rate"].values[0] * 100 for s in SCAFFOLDS]
-    sonnet_rates = [sonnet_df[sonnet_df["scaffold"] == s]["pass_rate"].values[0] * 100 for s in SCAFFOLDS]
+    haiku_rates = [haiku_df[haiku_df["scaffold"] == s]["correct_rate"].values[0] * 100 for s in SCAFFOLDS]
+    sonnet_rates = [sonnet_df[sonnet_df["scaffold"] == s]["correct_rate"].values[0] * 100 for s in SCAFFOLDS]
 
     haiku_ci_lo = [haiku_df[haiku_df["scaffold"] == s]["ci_lower"].values[0] * 100 for s in SCAFFOLDS]
     haiku_ci_hi = [haiku_df[haiku_df["scaffold"] == s]["ci_upper"].values[0] * 100 for s in SCAFFOLDS]
@@ -159,7 +159,7 @@ def fig1_scaffold_pass_rate():
     bars_s = ax.bar(x + width / 2, sonnet_rates, width, yerr=sonnet_err,
                     color=CB_ORANGE, edgecolor="white", linewidth=0.5,
                     capsize=3, error_kw={"linewidth": 1},
-                    label=f"Sonnet 4.5 (n={int(sonnet_df['n'].iloc[0])})", zorder=3)
+                    label=f"Sonnet 4.6 (n={int(sonnet_df['n'].iloc[0])})", zorder=3)
 
     # Rate labels on bars
     for bar, rate in zip(bars_h, haiku_rates):
@@ -190,7 +190,7 @@ def fig2_heatmap():
 
     for ax, model_data, model_name, title in [
         (ax1, haiku_results, "haiku-4.5", "Haiku 4.5"),
-        (ax2, sonnet_results, "sonnet-4.5", "Sonnet 4.5"),
+        (ax2, sonnet_results, "sonnet-4.6", "Sonnet 4.6"),
     ]:
         matrix = np.zeros((len(TESTS), len(SCAFFOLDS)))
         counts = np.zeros((len(TESTS), len(SCAFFOLDS)))
@@ -244,7 +244,7 @@ def fig3_run_consistency():
 
     for ax, model_data, model_name, runs_list, title in [
         (ax1, haiku_results, "haiku-4.5", haiku_runs, f"Haiku 4.5 ({len(haiku_runs)} runs)"),
-        (ax2, sonnet_results, "sonnet-4.5", sonnet_runs, f"Sonnet 4.5 ({len(sonnet_runs)} runs)"),
+        (ax2, sonnet_results, "sonnet-4.6", sonnet_runs, f"Sonnet 4.6 ({len(sonnet_runs)} runs)"),
     ]:
         for si, scaffold in enumerate(SCAFFOLDS):
             rates = []
@@ -287,7 +287,7 @@ def fig4_nc_vs_proxy():
 
     for mi, (model_data, model_name, marker) in enumerate([
         (haiku_results, "Haiku 4.5", "o"),
-        (sonnet_results, "Sonnet 4.5", "s"),
+        (sonnet_results, "Sonnet 4.6", "s"),
     ]):
         by_scaffold = defaultdict(list)
         for r in model_data:
@@ -328,7 +328,7 @@ def fig4_nc_vs_proxy():
         Line2D([0], [0], marker="o", color="w", markerfacecolor="gray",
                markersize=8, label="Haiku 4.5"),
         Line2D([0], [0], marker="s", color="w", markerfacecolor="gray",
-               markersize=8, label="Sonnet 4.5"),
+               markersize=8, label="Sonnet 4.6"),
     ]
     for si, s in enumerate(SCAFFOLDS):
         legend_elements.append(
@@ -353,7 +353,7 @@ def fig5_error_severity():
 
     for ax, model_data, title in [
         (ax1, haiku_results, "Haiku 4.5"),
-        (ax2, sonnet_results, "Sonnet 4.5"),
+        (ax2, sonnet_results, "Sonnet 4.6"),
     ]:
         by_scaffold = defaultdict(list)
         for r in model_data:

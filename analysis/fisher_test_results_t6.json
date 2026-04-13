@@ -94,101 +94,6 @@
     "p_value": 0.345131,
     "significant_005": false
   },
-  "s1_vs_s0_sonnet": {
-    "model": "sonnet",
-    "comparison": "S1 vs S0",
-    "contingency_table": [
-      [
-        2,
-        17
-      ],
-      [
-        2,
-        17
-      ]
-    ],
-    "sx_walk_rate": 0.1053,
-    "s0_walk_rate": 0.1053,
-    "odds_ratio": 1.0,
-    "p_value": 1.0,
-    "significant_005": false
-  },
-  "s2_vs_s0_sonnet": {
-    "model": "sonnet",
-    "comparison": "S2 vs S0",
-    "contingency_table": [
-      [
-        2,
-        17
-      ],
-      [
-        2,
-        17
-      ]
-    ],
-    "sx_walk_rate": 0.1053,
-    "s0_walk_rate": 0.1053,
-    "odds_ratio": 1.0,
-    "p_value": 1.0,
-    "significant_005": false
-  },
-  "s3_vs_s0_sonnet": {
-    "model": "sonnet",
-    "comparison": "S3 vs S0",
-    "contingency_table": [
-      [
-        2,
-        17
-      ],
-      [
-        2,
-        17
-      ]
-    ],
-    "sx_walk_rate": 0.1053,
-    "s0_walk_rate": 0.1053,
-    "odds_ratio": 1.0,
-    "p_value": 1.0,
-    "significant_005": false
-  },
-  "s4_vs_s0_sonnet": {
-    "model": "sonnet",
-    "comparison": "S4 vs S0",
-    "contingency_table": [
-      [
-        2,
-        17
-      ],
-      [
-        2,
-        17
-      ]
-    ],
-    "sx_walk_rate": 0.1053,
-    "s0_walk_rate": 0.1053,
-    "odds_ratio": 1.0,
-    "p_value": 1.0,
-    "significant_005": false
-  },
-  "s5_vs_s0_sonnet": {
-    "model": "sonnet",
-    "comparison": "S5 vs S0",
-    "contingency_table": [
-      [
-        1,
-        18
-      ],
-      [
-        2,
-        17
-      ]
-    ],
-    "sx_walk_rate": 0.0526,
-    "s0_walk_rate": 0.1053,
-    "odds_ratio": 0.4722222222222222,
-    "p_value": 1.0,
-    "significant_005": false
-  },
   "t15_vs_t6_s0_haiku": {
     "model": "haiku",
     "comparison": "T1-T5 vs T6 (S0)",
@@ -302,6 +207,101 @@
     "odds_ratio": 46.0,
     "p_value": 0.0,
     "significant_005": true
+  },
+  "s1_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S1 vs S0",
+    "contingency_table": [
+      [
+        2,
+        17
+      ],
+      [
+        2,
+        17
+      ]
+    ],
+    "sx_walk_rate": 0.1053,
+    "s0_walk_rate": 0.1053,
+    "odds_ratio": 1.0,
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "s2_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S2 vs S0",
+    "contingency_table": [
+      [
+        2,
+        17
+      ],
+      [
+        2,
+        17
+      ]
+    ],
+    "sx_walk_rate": 0.1053,
+    "s0_walk_rate": 0.1053,
+    "odds_ratio": 1.0,
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "s3_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S3 vs S0",
+    "contingency_table": [
+      [
+        2,
+        17
+      ],
+      [
+        2,
+        17
+      ]
+    ],
+    "sx_walk_rate": 0.1053,
+    "s0_walk_rate": 0.1053,
+    "odds_ratio": 1.0,
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "s4_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S4 vs S0",
+    "contingency_table": [
+      [
+        2,
+        17
+      ],
+      [
+        2,
+        17
+      ]
+    ],
+    "sx_walk_rate": 0.1053,
+    "s0_walk_rate": 0.1053,
+    "odds_ratio": 1.0,
+    "p_value": 1.0,
+    "significant_005": false
+  },
+  "s5_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S5 vs S0",
+    "contingency_table": [
+      [
+        1,
+        18
+      ],
+      [
+        2,
+        17
+      ]
+    ],
+    "sx_walk_rate": 0.0526,
+    "s0_walk_rate": 0.1053,
+    "odds_ratio": 0.4722222222222222,
+    "p_value": 1.0,
+    "significant_005": false
   },
   "t15_vs_t6_s0_sonnet": {
     "model": "sonnet",

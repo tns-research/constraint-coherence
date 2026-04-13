@@ -2262,7 +2262,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2277,7 +2277,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2292,7 +2292,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2307,7 +2307,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2322,7 +2322,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2337,7 +2337,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2352,7 +2352,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2367,7 +2367,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2382,7 +2382,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2397,7 +2397,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2412,7 +2412,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2427,7 +2427,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2442,7 +2442,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2457,7 +2457,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2472,7 +2472,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2487,7 +2487,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2502,7 +2502,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2517,7 +2517,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2532,7 +2532,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2547,7 +2547,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2562,7 +2562,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2577,7 +2577,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2592,7 +2592,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2607,7 +2607,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2622,7 +2622,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2637,7 +2637,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2652,7 +2652,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2667,7 +2667,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2682,7 +2682,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -2697,7 +2697,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2712,7 +2712,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2727,7 +2727,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2742,7 +2742,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2757,7 +2757,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2772,7 +2772,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2787,7 +2787,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2802,7 +2802,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2817,7 +2817,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2832,7 +2832,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2847,7 +2847,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2862,7 +2862,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2877,7 +2877,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2892,7 +2892,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2907,7 +2907,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2922,7 +2922,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2937,7 +2937,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2952,7 +2952,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2967,7 +2967,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2982,7 +2982,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -2997,7 +2997,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3012,7 +3012,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3027,7 +3027,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3042,7 +3042,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3057,7 +3057,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3072,7 +3072,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3087,7 +3087,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3102,7 +3102,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3117,7 +3117,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3132,7 +3132,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -3147,7 +3147,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3162,7 +3162,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3177,7 +3177,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3192,7 +3192,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3207,7 +3207,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3222,7 +3222,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3237,7 +3237,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3252,7 +3252,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3267,7 +3267,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3282,7 +3282,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3297,7 +3297,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3312,7 +3312,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3327,7 +3327,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3342,7 +3342,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3357,7 +3357,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3372,7 +3372,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3387,7 +3387,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3402,7 +3402,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3417,7 +3417,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3432,7 +3432,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3447,7 +3447,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3462,7 +3462,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3477,7 +3477,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3492,7 +3492,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3507,7 +3507,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3522,7 +3522,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3537,7 +3537,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3552,7 +3552,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3567,7 +3567,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3582,7 +3582,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -3597,7 +3597,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": 1,
@@ -5862,7 +5862,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -5877,7 +5877,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -5892,7 +5892,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -5907,7 +5907,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -5922,7 +5922,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet1",
@@ -5937,7 +5937,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -5952,7 +5952,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -5967,7 +5967,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -5982,7 +5982,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -5997,7 +5997,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -6012,7 +6012,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet2",
@@ -6027,7 +6027,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -6042,7 +6042,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -6057,7 +6057,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -6072,7 +6072,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -6087,7 +6087,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -6102,7 +6102,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet3",
@@ -6117,7 +6117,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet4",
@@ -6132,7 +6132,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet4",
@@ -6147,7 +6147,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet4",
@@ -6162,7 +6162,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet4",
@@ -6177,7 +6177,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet4",
@@ -6192,7 +6192,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet4",
@@ -6207,7 +6207,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet5",
@@ -6222,7 +6222,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet5",
@@ -6237,7 +6237,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet5",
@@ -6252,7 +6252,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet5",
@@ -6267,7 +6267,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet5",
@@ -6282,7 +6282,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet5",
@@ -6297,7 +6297,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet6",
@@ -6312,7 +6312,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet6",
@@ -6327,7 +6327,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet6",
@@ -6342,7 +6342,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet6",
@@ -6357,7 +6357,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet6",
@@ -6372,7 +6372,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet6",
@@ -6387,7 +6387,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet7",
@@ -6402,7 +6402,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet7",
@@ -6417,7 +6417,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet7",
@@ -6432,7 +6432,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet7",
@@ -6447,7 +6447,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet7",
@@ -6462,7 +6462,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet7",
@@ -6477,7 +6477,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet8",
@@ -6492,7 +6492,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet8",
@@ -6507,7 +6507,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet8",
@@ -6522,7 +6522,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet8",
@@ -6537,7 +6537,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet8",
@@ -6552,7 +6552,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet8",
@@ -6567,7 +6567,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet9",
@@ -6582,7 +6582,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet9",
@@ -6597,7 +6597,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet9",
@@ -6612,7 +6612,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet9",
@@ -6627,7 +6627,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet9",
@@ -6642,7 +6642,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet9",
@@ -6657,7 +6657,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet10",
@@ -6672,7 +6672,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet10",
@@ -6687,7 +6687,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet10",
@@ -6702,7 +6702,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet10",
@@ -6717,7 +6717,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet10",
@@ -6732,7 +6732,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet10",
@@ -6747,7 +6747,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet11",
@@ -6762,7 +6762,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet11",
@@ -6777,7 +6777,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet11",
@@ -6792,7 +6792,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet11",
@@ -6807,7 +6807,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet11",
@@ -6822,7 +6822,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet11",
@@ -6837,7 +6837,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet12",
@@ -6852,7 +6852,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet12",
@@ -6867,7 +6867,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet12",
@@ -6882,7 +6882,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet12",
@@ -6897,7 +6897,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet12",
@@ -6912,7 +6912,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet12",
@@ -6927,7 +6927,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet13",
@@ -6942,7 +6942,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet13",
@@ -6957,7 +6957,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet13",
@@ -6972,7 +6972,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet13",
@@ -6987,7 +6987,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet13",
@@ -7002,7 +7002,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet13",
@@ -7017,7 +7017,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet14",
@@ -7032,7 +7032,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet14",
@@ -7047,7 +7047,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet14",
@@ -7062,7 +7062,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet14",
@@ -7077,7 +7077,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet14",
@@ -7092,7 +7092,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet14",
@@ -7107,7 +7107,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet15",
@@ -7122,7 +7122,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet15",
@@ -7137,7 +7137,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet15",
@@ -7152,7 +7152,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet15",
@@ -7167,7 +7167,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet15",
@@ -7182,7 +7182,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet15",
@@ -7197,7 +7197,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet16",
@@ -7212,7 +7212,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet16",
@@ -7227,7 +7227,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet16",
@@ -7242,7 +7242,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet16",
@@ -7257,7 +7257,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet16",
@@ -7272,7 +7272,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet16",
@@ -7287,7 +7287,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet17",
@@ -7302,7 +7302,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet17",
@@ -7317,7 +7317,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet17",
@@ -7332,7 +7332,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet17",
@@ -7347,7 +7347,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet17",
@@ -7362,7 +7362,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet17",
@@ -7377,7 +7377,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet18",
@@ -7392,7 +7392,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet18",
@@ -7407,7 +7407,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet18",
@@ -7422,7 +7422,7 @@
     "proxy_drift_present": 0,
     "error_severity": 2,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet18",
@@ -7437,7 +7437,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet18",
@@ -7452,7 +7452,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet18",
@@ -7467,7 +7467,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet19",
@@ -7482,7 +7482,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet19",
@@ -7497,7 +7497,7 @@
     "proxy_drift_present": 0,
     "error_severity": 1,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet19",
@@ -7512,7 +7512,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet19",
@@ -7527,7 +7527,7 @@
     "proxy_drift_present": 0,
     "error_severity": 0,
     "strict_pass": true,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet19",
@@ -7542,7 +7542,7 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   },
   {
     "run": "sonnet19",
@@ -7557,6 +7557,6 @@
     "proxy_drift_present": 1,
     "error_severity": 3,
     "strict_pass": false,
-    "model": "sonnet-4.5"
+    "model": "sonnet-4.6"
   }
 ]

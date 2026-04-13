@@ -63,7 +63,7 @@ def main():
 
     print(f"Loaded {len(all_results)} results")
 
-    model_map = {"haiku-4.5": "haiku", "sonnet-4.5": "sonnet"}
+    model_map = {"haiku-4.5": "haiku", "sonnet-4.6": "sonnet"}
     scaffold_order = ["S0", "S1", "S2", "S3", "S4", "S5"]
 
     grouped = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))

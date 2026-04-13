@@ -22,7 +22,7 @@ ANALYSIS_DIR = ROOT / "analysis"
 CORRECT_ANSWER = "walk"  # T6 inverse
 
 HAIKU_FILES = [f"t6_haiku_run{i}.jsonl" for i in range(1, 26)]
-SONNET_FILES = [f"t6_sonnet_run{i}.jsonl" for i in range(1, 16)]
+SONNET_FILES = [f"t6_sonnet_run{i}.jsonl" for i in range(1, 20)]
 
 
 def wilson_ci(k, n, z=1.96):

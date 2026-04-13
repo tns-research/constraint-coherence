@@ -31,7 +31,7 @@ def generate_single_model_table(rows, model_label, caption_suffix):
 
     for row in rows:
         name = format_scaffold_name(row["scaffold"])
-        rate = float(row["pass_rate"])
+        rate = float(row["correct_rate"])
         ci_lo = float(row["ci_lower"])
         ci_hi = float(row["ci_upper"])
         n = int(row["n"])
@@ -60,7 +60,7 @@ def generate_combined_table(haiku_rows, sonnet_rows):
     lines.append("\\centering")
     lines.append("\\begin{tabular}{lcccc}")
     lines.append("\\toprule")
-    lines.append(f"Scaffold & \\multicolumn{{2}}{{c}}{{Haiku 4.5 ($n$={haiku_n})}} & \\multicolumn{{2}}{{c}}{{Sonnet 4.5 ($n$={sonnet_n})}} \\\\")
+    lines.append(f"Scaffold & \\multicolumn{{2}}{{c}}{{Haiku 4.5 ($n$={haiku_n})}} & \\multicolumn{{2}}{{c}}{{Sonnet 4.6 ($n$={sonnet_n})}} \\\\")
     lines.append("\\cmidrule(lr){2-3} \\cmidrule(lr){4-5}")
     lines.append(" & Pass Rate & 95\\% CI & Pass Rate & 95\\% CI \\\\")
     lines.append("\\midrule")
@@ -68,13 +68,13 @@ def generate_combined_table(haiku_rows, sonnet_rows):
     for h_row, s_row in zip(haiku_rows, sonnet_rows):
         name = format_scaffold_name(h_row["scaffold"])
 
-        h_rate = float(h_row["pass_rate"])
+        h_rate = float(h_row["correct_rate"])
         h_ci = f"[{float(h_row['ci_lower']):.2f}, {float(h_row['ci_upper']):.2f}]"
         h_str = f"{h_rate:.0%}"
         if h_rate >= 0.9:
             h_str = f"\\textbf{{{h_str}}}"
 
-        s_rate = float(s_row["pass_rate"])
+        s_rate = float(s_row["correct_rate"])
         s_ci = f"[{float(s_row['ci_lower']):.2f}, {float(s_row['ci_upper']):.2f}]"
         s_str = f"{s_rate:.0%}"
         if s_rate >= 0.9:
@@ -154,7 +154,7 @@ def main():
     with open(ROOT / "runs/scored_combined_all_models.json") as f:
         all_data = json.load(f)
     haiku_run_count = len(set(r["run"] for r in all_data if r["model"] == "haiku-4.5"))
-    sonnet_run_count = len(set(r["run"] for r in all_data if r["model"] == "sonnet-4.5"))
+    sonnet_run_count = len(set(r["run"] for r in all_data if r["model"] == "sonnet-4.6"))
 
     # Individual model tables
     haiku_table = generate_single_model_table(haiku_rows, "Haiku", f"Claude Haiku 4.5, {haiku_run_count} runs")
@@ -162,7 +162,7 @@ def main():
         f.write(haiku_table)
     print(f"Written: paper/tables/haiku_results.tex")
 
-    sonnet_table = generate_single_model_table(sonnet_rows, "Sonnet", f"Claude Sonnet 4.5, {sonnet_run_count} runs")
+    sonnet_table = generate_single_model_table(sonnet_rows, "Sonnet", f"Claude Sonnet 4.6, {sonnet_run_count} runs")
     with open(ROOT / "paper/tables/sonnet_results.tex", "w") as f:
         f.write(sonnet_table)
     print(f"Written: paper/tables/sonnet_results.tex")
