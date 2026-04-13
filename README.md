@@ -17,38 +17,22 @@ They do, dramatically, on forward-constraint problems. But when we invert the co
 
 Six reasoning scaffolds, six test scenarios (five forward + one inverse), two Claude models, 504 scored responses across T1-T6.
 
-![Pass rates by scaffold with 95% confidence intervals](paper/figures/scaffold_pass_rate.png)
+![Heatmap of correct-answer rates across all scaffolds and test groups](figures/fig4_heatmap.png)
 
-**One scaffold dominates.** Means-end analysis — forcing the model to define the goal state and work backward to its preconditions — achieves **96% on Haiku** and **87% on Sonnet**. The unscaffolded control sits at 32% and 20% (Fisher's exact, p < 0.001).
+**One scaffold dominates.** Means-end analysis — forcing the model to define the goal state and work backward to its preconditions — achieves **96% on Haiku** and **93% on Sonnet**. The unscaffolded control sits at 32% and 20%.
 
-**Not all scaffolds help.** Telling the model to check whether it's optimizing a proxy metric (S3) actually fails to improve performance on Haiku (32% vs 24% control, p = 0.754). Asking a model to watch out for exactly the mistake it's making doesn't work — it may even reinforce the error.
+**All scaffolds improve T1-T5 performance.** Every scaffold pushes both models above their baselines. S3 (attribute substitution) reaches 100% on Sonnet; S2 (means-end analysis) reaches 96% on Haiku.
 
-**The mechanism is backward chaining.** The model fails because it reasons forward: short distance → walking is practical → walk. Means-end analysis forces it to reason backward: goal is car-at-wash → car must be driven there → drive. This independently converges with Jo (2026), who found that STAR's Task step — a different formalism for the same backward-chaining mechanism — achieves 85% on Sonnet.
+**The mechanism is backward chaining.** The model fails because it reasons forward: short distance → walking is practical → walk. Means-end analysis forces it to reason backward: goal is car-at-wash → car must be driven there → drive.
 
-| Scaffold | Haiku 4.5 (n=25) | Sonnet 4.6 (n=19) |
+| Scaffold | Haiku 4.5 (n=25) | Sonnet 4.6 (n=15) |
 |----------|:-:|:-:|
 | S0 - Control | 32% | 20% |
-| S1 - Constraints-first | 44% | 60% |
-| **S2 - Means-end analysis** | **96%** | **87%** |
-| S3 - Attribute substitution | 32% | 100% |
-| S4 - Embodied simulation | 80% | 73% |
-| S5 - Systems causal map | 88% | 80% |
-
-### What the heatmap reveals
-
-![Test × Scaffold pass rate heatmap](paper/figures/heatmap.png)
-
-S2 achieves near-ceiling performance across all five test variants. S3's dramatic model split (32% Haiku vs 100% Sonnet) suggests metacognitive scaffolds interact differently with model capacity. S4 and S5 are effective but show more variance.
-
-### Stability across runs (T1-T5)
-
-![Pass rates across independent runs for T1-T5](paper/figures/run_consistency_t1t5.png)
-
-### Stability across runs (T6)
-
-Each T6 run is a single test, so pass rate is binary (0% or 100%). The chart shows which runs passed for each scaffold.
-
-![Pass rates across independent runs for T6](paper/figures/run_consistency_t6.png)
+| S1 - Constraints-first | 52% | 67% |
+| **S2 - Means-end analysis** | **96%** | **93%** |
+| S3 - Attribute substitution | 64% | 100% |
+| S4 - Embodied simulation | 88% | 87% |
+| S5 - Systems causal map | 92% | 87% |
 
 ## When scaffolds backfire: T6
 
@@ -56,9 +40,11 @@ T6 inverts the constraint. Your parking meter expires in 3 minutes. The meter ma
 
 On T1-T5, scaffolds push Haiku from 32% to 96%. On T6, they push it from 36% **down to 8%**.
 
-![T1-T5 vs T6 performance inversion](paper/figures_v3/fig1_inversion.png)
+![The inversion effect: T1-T5 vs T6 performance](figures/fig1_inversion.png)
 
 The best T1-T5 scaffold (S2, means-end analysis) becomes the worst on T6. It forces backward chaining from the goal, but never questions whether the sub-goals preserve the goal's preconditions. We call this a **reasoning tunnel**.
+
+![The reasoning tunnel: backward chaining produces locally valid but globally incoherent answers](figures/fig3_reasoning_tunnel.png)
 
 | Scaffold | Haiku T6 Walk% (n=25) | Sonnet T6 Walk% (n=19) |
 |----------|:-:|:-:|
@@ -71,11 +57,11 @@ The best T1-T5 scaffold (S2, means-end analysis) becomes the worst on T6. It for
 
 Scaffolds don't just fail to help on T6. They convert uncertainty into confident error:
 
-![Response distribution showing scaffold-induced confidence in wrong answers](paper/figures_v3/fig5_ambiguity.png)
+![Response distribution showing scaffold-induced confidence in wrong answers](figures/fig5_ambiguity.png)
 
 Under S0, Haiku produces 9 walk, 12 drive, and 4 ambiguous responses. Under S2, it shifts to 2 walk, 19 drive, 4 ambiguous. The scaffold eliminates hedging and locks in the wrong answer.
 
-![Gain on T1-T5 vs loss on T6 per scaffold](paper/figures_v3/fig2_gain_loss_scatter.png)
+![Gain on T1-T5 vs loss on T6 per scaffold](figures/fig2_gain_loss_scatter.png)
 
 ## The six test scenarios
 
@@ -133,7 +119,7 @@ Each response is scored on whether the model:
 2. **Rejected** the infeasible option (walking for T1-T5; driving for T6)
 3. **Recommended** the correct action (driving for T1-T5; walking for T6)
 
-**Strict pass** = all three. Scoring is bidirectional: `correct_answer` is read from `data/tests.json` per test, so the scorer handles both constraint directions automatically. Automated scoring validated against manual annotation (T1-T5: Cohen's kappa = 0.786; T6: kappa = 0.631).
+**Strict pass** = all three. Scoring is bidirectional: `correct_answer` is read from `data/tests.json` per test, so the scorer handles both constraint directions automatically. Automated scoring validated against manual annotation (T1-T5: Cohen's kappa = 0.786, n=30; T6: kappa = 0.639, n=70).
 
 ## Repository structure
 
@@ -142,7 +128,7 @@ data/           Tests (6 scenarios) and scaffold prompts
 runs/           504 scored responses (JSON) for T1-T6
 analysis/       Pass rates, CIs, Fisher test results (T1-T5 and T6)
 validation/     Manual annotation sample + agreement stats
-paper/          Figures (PNG) and LaTeX tables
+figures/        Publication figures (PNG)
 ```
 
 ## Citation

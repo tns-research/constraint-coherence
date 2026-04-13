@@ -1,28 +1,60 @@
 #!/usr/bin/env python3
 """Statistical analysis for Constraint Coherence Benchmark.
 
-Calculates:
-1. Pass rates with 95% binomial confidence intervals per scaffold per model
-2. Fisher's exact test (S2 vs S0) for each model
-3. Exports results to CSV and JSON
+Calculates correct-answer rates (recommendation-based) with 95% Wilson
+confidence intervals per scaffold per model, separated by T1-T5 and T6.
+Fisher's exact tests for all scaffolds vs S0.
+
+Primary metric: recommendation rate (drive for T1-T5, walk for T6).
+Strict pass is a secondary validation metric only.
 """
 import json
 import csv
 import os
+import math
 from pathlib import Path
-from scipy import stats
 from collections import defaultdict
 
 ROOT = Path(__file__).resolve().parent
 
-def binomial_ci(successes, n, alpha=0.05):
-    """Clopper-Pearson exact binomial confidence interval."""
+def wilson_ci(successes, n, z=1.96):
+    """Wilson score interval for a binomial proportion."""
     if n == 0:
         return 0.0, 0.0, 0.0
-    p_hat = successes / n
-    ci_lower = stats.beta.ppf(alpha / 2, successes, n - successes + 1) if successes > 0 else 0.0
-    ci_upper = stats.beta.ppf(1 - alpha / 2, successes + 1, n - successes) if successes < n else 1.0
-    return p_hat, ci_lower, ci_upper
+    p = successes / n
+    denom = 1 + z**2 / n
+    center = (p + z**2 / (2*n)) / denom
+    spread = z * math.sqrt(p*(1-p)/n + z**2/(4*n**2)) / denom
+    return p, max(0, center - spread), min(1, center + spread)
+
+
+def fisher_exact_2x2(table):
+    """Two-sided Fisher's exact test for a 2x2 contingency table."""
+    a, b = table[0]
+    c, d = table[1]
+
+    def log_fac(x):
+        return sum(math.log(i) for i in range(1, x+1))
+
+    def hyper_lp(a, b, c, d):
+        n = a + b + c + d
+        return (log_fac(a+b) + log_fac(c+d) + log_fac(a+c) + log_fac(b+d)
+                - log_fac(n) - log_fac(a) - log_fac(b) - log_fac(c) - log_fac(d))
+
+    obs_lp = hyper_lp(a, b, c, d)
+    row1, col1 = a + b, a + c
+    row2 = c + d
+    p_val = 0.0
+    for i in range(min(row1, col1) + 1):
+        j, k, l = row1 - i, col1 - i, row2 - (col1 - i)
+        if j < 0 or k < 0 or l < 0:
+            continue
+        lp = hyper_lp(i, j, k, l)
+        if lp <= obs_lp + 1e-10:
+            p_val += math.exp(lp)
+
+    odds = (a*d) / (b*c) if b*c > 0 else (float('inf') if a*d > 0 else 0.0)
+    return odds, min(1.0, p_val)
 
 
 def main():
@@ -31,169 +63,146 @@ def main():
 
     print(f"Loaded {len(all_results)} results")
 
-    # Map model names
-    model_map = {
-        "haiku-4.5": "haiku",
-        "sonnet-4.5": "sonnet",
-    }
+    model_map = {"haiku-4.5": "haiku", "sonnet-4.5": "sonnet"}
+    scaffold_order = ["S0", "S1", "S2", "S3", "S4", "S5"]
 
-    # Group by model and scaffold
-    grouped = defaultdict(lambda: defaultdict(list))
+    grouped = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
     for r in all_results:
         model = model_map.get(r.get("model", "haiku-4.5"), "haiku")
         scaffold = r["scaffold_id"]
-        grouped[model][scaffold].append(r)
+        test_group = "T6" if r["test_id"] == "T6" else "T1-T5"
+        grouped[model][test_group][scaffold].append(r)
 
-    # Calculate stats
-    rows = []
-    scaffold_order = ["S0", "S1", "S2", "S3", "S4", "S5"]
+    os.makedirs(ROOT / "analysis", exist_ok=True)
 
+    # ---- T1-T5: correct = recommendation == "drive" ----
     print("\n" + "=" * 70)
-    print("PASS RATES WITH 95% CONFIDENCE INTERVALS")
+    print("T1-T5 CORRECT-ANSWER RATES (% recommending drive)")
     print("=" * 70)
 
+    rows = []
     for model in ["haiku", "sonnet"]:
         print(f"\n--- {model.upper()} ---")
-        print(f"{'Scaffold':<10} {'n':>4} {'Pass':>5} {'Rate':>8} {'95% CI':>20}")
-        print("-" * 55)
+        for scaffold in scaffold_order:
+            items = grouped[model]["T1-T5"][scaffold]
+            n = len(items)
+            correct = sum(1 for r in items if r.get("recommendation") == "drive")
+            rate, ci_lo, ci_hi = wilson_ci(correct, n)
+            print(f"  {scaffold}: {correct}/{n} = {rate:.0%}  [{ci_lo:.3f}, {ci_hi:.3f}]")
+            rows.append({"model": model, "scaffold": scaffold, "n": n, "correct": correct,
+                          "correct_rate": round(rate, 4), "ci_lower": round(ci_lo, 4), "ci_upper": round(ci_hi, 4)})
+
+    with open(ROOT / "analysis/scaffold_stats.csv", "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=["model","scaffold","n","correct","correct_rate","ci_lower","ci_upper"])
+        w.writeheader()
+        w.writerows(rows)
+    print(f"\nCSV: analysis/scaffold_stats.csv")
+
+    # ---- T6: walk / drive / ambiguous ----
+    print("\n" + "=" * 70)
+    print("T6 RESPONSE DISTRIBUTION (walk = correct)")
+    print("=" * 70)
+
+    rows_t6 = []
+    for model in ["haiku", "sonnet"]:
+        print(f"\n--- {model.upper()} ---")
+        for scaffold in scaffold_order:
+            items = grouped[model]["T6"][scaffold]
+            n = len(items)
+            walk = sum(1 for r in items if r.get("recommendation") == "walk")
+            drive = sum(1 for r in items if r.get("recommendation") == "drive")
+            ambig = n - walk - drive
+            rate, ci_lo, ci_hi = wilson_ci(walk, n)
+            print(f"  {scaffold}: walk={walk} drive={drive} ambig={ambig}  walk%={rate:.0%}")
+            rows_t6.append({"model": model, "scaffold": scaffold, "n": n,
+                            "walk": walk, "drive": drive, "ambiguous": ambig,
+                            "walk_rate": round(rate, 4), "ci_lower": round(ci_lo, 4), "ci_upper": round(ci_hi, 4)})
+
+    with open(ROOT / "analysis/scaffold_stats_t6.csv", "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=["model","scaffold","n","walk","drive","ambiguous","walk_rate","ci_lower","ci_upper"])
+        w.writeheader()
+        w.writerows(rows_t6)
+    print(f"\nCSV: analysis/scaffold_stats_t6.csv")
+
+    # ---- Fisher's exact: each scaffold vs S0 (T1-T5) ----
+    print("\n" + "=" * 70)
+    print("FISHER'S EXACT: each scaffold vs S0 (T1-T5)")
+    print("=" * 70)
+
+    fisher = {}
+    for model in ["haiku", "sonnet"]:
+        print(f"\n--- {model.upper()} ---")
+        s0 = grouped[model]["T1-T5"]["S0"]
+        s0_c = sum(1 for r in s0 if r.get("recommendation") == "drive")
+        s0_w = len(s0) - s0_c
+        for scaffold in ["S1","S2","S3","S4","S5"]:
+            sx = grouped[model]["T1-T5"][scaffold]
+            sx_c = sum(1 for r in sx if r.get("recommendation") == "drive")
+            sx_w = len(sx) - sx_c
+            table = [[sx_c, sx_w], [s0_c, s0_w]]
+            odds, p = fisher_exact_2x2(table)
+            sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+            print(f"  {scaffold} vs S0: p={p:.4f} {sig}")
+            fisher[f"{scaffold.lower()}_vs_s0_{model}"] = {
+                "model": model, "comparison": f"{scaffold} vs S0",
+                "contingency_table": table,
+                "sx_rate": round(sx_c/len(sx), 4), "s0_rate": round(s0_c/len(s0), 4),
+                "odds_ratio": float(odds) if odds != float('inf') else "Infinity",
+                "p_value": round(p, 6), "significant_005": p < 0.05}
+
+    with open(ROOT / "analysis/fisher_test_results.json", "w") as f:
+        json.dump(fisher, f, indent=2)
+    print(f"\nJSON: analysis/fisher_test_results.json")
+
+    # ---- Fisher's exact: T6 scaffolds vs S0 + T1-T5 vs T6 within scaffold ----
+    print("\n" + "=" * 70)
+    print("FISHER'S EXACT: T6 scaffold vs S0 + T1-T5 vs T6 within scaffold")
+    print("=" * 70)
+
+    fisher_t6 = {}
+    for model in ["haiku", "sonnet"]:
+        print(f"\n--- {model.upper()} ---")
+        s0 = grouped[model]["T6"]["S0"]
+        s0_walk = sum(1 for r in s0 if r.get("recommendation") == "walk")
+        s0_other = len(s0) - s0_walk
+        for scaffold in ["S1","S2","S3","S4","S5"]:
+            sx = grouped[model]["T6"][scaffold]
+            sx_walk = sum(1 for r in sx if r.get("recommendation") == "walk")
+            sx_other = len(sx) - sx_walk
+            table = [[sx_walk, sx_other], [s0_walk, s0_other]]
+            odds, p = fisher_exact_2x2(table)
+            sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+            print(f"  T6 {scaffold} vs S0: p={p:.4f} {sig}")
+            fisher_t6[f"{scaffold.lower()}_vs_s0_{model}"] = {
+                "model": model, "comparison": f"{scaffold} vs S0",
+                "contingency_table": table,
+                "sx_walk_rate": round(sx_walk/len(sx), 4),
+                "s0_walk_rate": round(s0_walk/len(s0), 4),
+                "odds_ratio": float(odds) if odds != float('inf') else "Infinity",
+                "p_value": round(p, 6), "significant_005": p < 0.05}
 
         for scaffold in scaffold_order:
-            items = grouped[model][scaffold]
-            n = len(items)
-            passes = sum(1 for r in items if r["strict_pass"])
-            p_hat, ci_lower, ci_upper = binomial_ci(passes, n)
+            t15 = grouped[model]["T1-T5"][scaffold]
+            t6 = grouped[model]["T6"][scaffold]
+            t15_c = sum(1 for r in t15 if r.get("recommendation") == "drive")
+            t6_c = sum(1 for r in t6 if r.get("recommendation") == "walk")
+            table = [[t15_c, len(t15)-t15_c], [t6_c, len(t6)-t6_c]]
+            odds, p = fisher_exact_2x2(table)
+            sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+            print(f"  T1-T5 vs T6 ({scaffold}): p={p:.4f} {sig}")
+            fisher_t6[f"t15_vs_t6_{scaffold.lower()}_{model}"] = {
+                "model": model, "comparison": f"T1-T5 vs T6 ({scaffold})",
+                "contingency_table": table,
+                "t15_correct_rate": round(t15_c/len(t15), 4),
+                "t6_correct_rate": round(t6_c/len(t6), 4),
+                "odds_ratio": float(odds) if odds != float('inf') else "Infinity",
+                "p_value": round(p, 6), "significant_005": p < 0.05}
 
-            print(f"{scaffold:<10} {n:>4} {passes:>5} {p_hat:>7.1%} [{ci_lower:.3f}, {ci_upper:.3f}]")
+    with open(ROOT / "analysis/fisher_test_results_t6.json", "w") as f:
+        json.dump(fisher_t6, f, indent=2)
+    print(f"\nJSON: analysis/fisher_test_results_t6.json")
 
-            rows.append({
-                "model": model,
-                "scaffold": scaffold,
-                "n": n,
-                "passes": passes,
-                "pass_rate": round(p_hat, 4),
-                "ci_lower": round(ci_lower, 4),
-                "ci_upper": round(ci_upper, 4),
-            })
-
-    # Write CSV
-    os.makedirs(ROOT / "analysis", exist_ok=True)
-    csv_path = ROOT / "analysis/scaffold_stats.csv"
-    with open(csv_path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["model", "scaffold", "n", "passes", "pass_rate", "ci_lower", "ci_upper"])
-        writer.writeheader()
-        writer.writerows(rows)
-    print(f"\nCSV written to {csv_path}")
-
-    # Fisher's exact test: S2 vs S0
-    print("\n" + "=" * 70)
-    print("FISHER'S EXACT TEST: S2 vs S0")
-    print("=" * 70)
-
-    fisher_results = {}
-
-    for model in ["haiku", "sonnet"]:
-        s2_items = grouped[model]["S2"]
-        s0_items = grouped[model]["S0"]
-
-        s2_pass = sum(1 for r in s2_items if r["strict_pass"])
-        s2_fail = len(s2_items) - s2_pass
-        s0_pass = sum(1 for r in s0_items if r["strict_pass"])
-        s0_fail = len(s0_items) - s0_pass
-
-        contingency = [[s2_pass, s2_fail], [s0_pass, s0_fail]]
-        odds_ratio, p_value = stats.fisher_exact(contingency)
-
-        print(f"\n--- {model.upper()} ---")
-        print(f"S2: {s2_pass}/{len(s2_items)} = {s2_pass/len(s2_items):.1%}")
-        print(f"S0: {s0_pass}/{len(s0_items)} = {s0_pass/len(s0_items):.1%}")
-        print(f"Contingency table: {contingency}")
-        print(f"Odds ratio: {odds_ratio:.4f}")
-        print(f"p-value: {p_value:.6f}")
-        print(f"Significant (p < 0.05): {'YES' if p_value < 0.05 else 'NO'}")
-        print(f"Significant (p < 0.01): {'YES' if p_value < 0.01 else 'NO'}")
-        print(f"Significant (p < 0.001): {'YES' if p_value < 0.001 else 'NO'}")
-
-        fisher_results[f"s2_vs_s0_{model}"] = {
-            "model": model,
-            "contingency_table": contingency,
-            "s2_pass_rate": s2_pass / len(s2_items),
-            "s0_pass_rate": s0_pass / len(s0_items),
-            "odds_ratio": float(odds_ratio) if odds_ratio != float('inf') else "Infinity",
-            "p_value": p_value,
-            "significant_005": p_value < 0.05,
-            "significant_001": p_value < 0.01,
-            "significant_0001": p_value < 0.001,
-        }
-
-    # Additional pairwise comparisons (all scaffolds vs S0, per model)
-    print("\n" + "=" * 70)
-    print("ALL PAIRWISE COMPARISONS vs S0 (Fisher's exact)")
-    print("=" * 70)
-
-    for model in ["haiku", "sonnet"]:
-        print(f"\n--- {model.upper()} ---")
-        print(f"{'Comparison':<12} {'OR':>10} {'p-value':>12} {'Sig':>5}")
-        print("-" * 42)
-
-        s0_items = grouped[model]["S0"]
-        s0_pass = sum(1 for r in s0_items if r["strict_pass"])
-        s0_fail = len(s0_items) - s0_pass
-
-        for scaffold in ["S1", "S2", "S3", "S4", "S5"]:
-            sx_items = grouped[model][scaffold]
-            sx_pass = sum(1 for r in sx_items if r["strict_pass"])
-            sx_fail = len(sx_items) - sx_pass
-
-            contingency = [[sx_pass, sx_fail], [s0_pass, s0_fail]]
-            odds_ratio, p_value = stats.fisher_exact(contingency)
-
-            sig = "***" if p_value < 0.001 else "**" if p_value < 0.01 else "*" if p_value < 0.05 else "ns"
-            or_str = f"{odds_ratio:.2f}" if odds_ratio != float('inf') else "Inf"
-            print(f"{scaffold} vs S0   {or_str:>10} {p_value:>12.6f} {sig:>5}")
-
-            fisher_results[f"{scaffold.lower()}_vs_s0_{model}"] = {
-                "model": model,
-                "comparison": f"{scaffold} vs S0",
-                "contingency_table": contingency,
-                "odds_ratio": float(odds_ratio) if odds_ratio != float('inf') else "Infinity",
-                "p_value": p_value,
-                "significant_005": p_value < 0.05,
-            }
-
-    # Save Fisher results
-    fisher_path = ROOT / "analysis/fisher_test_results.json"
-    # Convert numpy types to native Python types
-    def convert_types(obj):
-        if isinstance(obj, dict):
-            return {k: convert_types(v) for k, v in obj.items()}
-        elif isinstance(obj, list):
-            return [convert_types(v) for v in obj]
-        elif isinstance(obj, (bool,)):
-            return obj
-        elif hasattr(obj, 'item'):
-            return obj.item()
-        return obj
-
-    with open(fisher_path, "w") as f:
-        json.dump(convert_types(fisher_results), f, indent=2)
-    print(f"\nFisher results written to {fisher_path}")
-
-    # Cross-model comparison (Haiku vs Sonnet overall)
-    print("\n" + "=" * 70)
-    print("CROSS-MODEL COMPARISON (Haiku vs Sonnet)")
-    print("=" * 70)
-
-    for scaffold in scaffold_order:
-        h_items = grouped["haiku"][scaffold]
-        s_items = grouped["sonnet"][scaffold]
-        h_pass = sum(1 for r in h_items if r["strict_pass"])
-        s_pass = sum(1 for r in s_items if r["strict_pass"])
-        h_rate = h_pass / len(h_items) if h_items else 0
-        s_rate = s_pass / len(s_items) if s_items else 0
-        diff = s_rate - h_rate
-        print(f"{scaffold}: Haiku={h_rate:.0%} ({h_pass}/{len(h_items)}), Sonnet={s_rate:.0%} ({s_pass}/{len(s_items)}), diff={diff:+.0%}")
-
-    print("\nPhase 4 analysis complete.")
+    print("\nAnalysis complete.")
 
 
 if __name__ == "__main__":

@@ -1,87 +1,78 @@
 {
-  "s2_vs_s0_haiku": {
-    "model": "haiku",
-    "comparison": "S2 vs S0",
-    "contingency_table": [
-      [
-        25,
-        25
-      ],
-      [
-        8,
-        42
-      ]
-    ],
-    "odds_ratio": 5.25,
-    "p_value": 0.0005560330234769427,
-    "significant_005": true
-  },
-  "s2_vs_s0_sonnet": {
-    "model": "sonnet",
-    "comparison": "S2 vs S0",
-    "contingency_table": [
-      [
-        16,
-        18
-      ],
-      [
-        1,
-        33
-      ]
-    ],
-    "odds_ratio": 29.333333333333332,
-    "p_value": 3.437850468014437e-05,
-    "significant_005": true
-  },
   "s1_vs_s0_haiku": {
     "model": "haiku",
     "comparison": "S1 vs S0",
     "contingency_table": [
       [
-        11,
-        39
+        13,
+        12
       ],
       [
         8,
-        42
+        17
       ]
     ],
-    "odds_ratio": 1.4807692307692308,
-    "p_value": 0.6110593016041338,
+    "sx_rate": 0.52,
+    "s0_rate": 0.32,
+    "odds_ratio": 2.3020833333333335,
+    "p_value": 0.25159,
     "significant_005": false
+  },
+  "s2_vs_s0_haiku": {
+    "model": "haiku",
+    "comparison": "S2 vs S0",
+    "contingency_table": [
+      [
+        24,
+        1
+      ],
+      [
+        8,
+        17
+      ]
+    ],
+    "sx_rate": 0.96,
+    "s0_rate": 0.32,
+    "odds_ratio": 51.0,
+    "p_value": 3e-06,
+    "significant_005": true
   },
   "s3_vs_s0_haiku": {
     "model": "haiku",
     "comparison": "S3 vs S0",
     "contingency_table": [
       [
-        9,
-        41
+        16,
+        9
       ],
       [
         8,
-        42
+        17
       ]
     ],
-    "odds_ratio": 1.1524390243902438,
-    "p_value": 1.0,
-    "significant_005": false
+    "sx_rate": 0.64,
+    "s0_rate": 0.32,
+    "odds_ratio": 3.7777777777777777,
+    "p_value": 0.04648,
+    "significant_005": true
   },
   "s4_vs_s0_haiku": {
     "model": "haiku",
     "comparison": "S4 vs S0",
     "contingency_table": [
       [
-        23,
-        27
+        22,
+        3
       ],
       [
         8,
-        42
+        17
       ]
     ],
-    "odds_ratio": 4.472222222222222,
-    "p_value": 0.0021844046200502534,
+    "sx_rate": 0.88,
+    "s0_rate": 0.32,
+    "odds_ratio": 15.583333333333334,
+    "p_value": 0.000112,
     "significant_005": true
   },
   "s5_vs_s0_haiku": {
@@ -89,16 +80,18 @@
     "comparison": "S5 vs S0",
     "contingency_table": [
       [
-        25,
-        25
+        23,
+        2
       ],
       [
         8,
-        42
+        17
       ]
     ],
-    "odds_ratio": 5.25,
-    "p_value": 0.0005560330234769427,
+    "sx_rate": 0.92,
+    "s0_rate": 0.32,
+    "odds_ratio": 24.4375,
+    "p_value": 2.2e-05,
     "significant_005": true
   },
   "s1_vs_s0_sonnet": {
@@ -106,16 +99,37 @@
     "comparison": "S1 vs S0",
     "contingency_table": [
       [
-        9,
-        25
+        10,
+        5
       ],
       [
-        1,
-        33
+        3,
+        12
       ]
     ],
-    "odds_ratio": 11.88,
-    "p_value": 0.013169080963617592,
+    "sx_rate": 0.6667,
+    "s0_rate": 0.2,
+    "odds_ratio": 8.0,
+    "p_value": 0.025328,
+    "significant_005": true
+  },
+  "s2_vs_s0_sonnet": {
+    "model": "sonnet",
+    "comparison": "S2 vs S0",
+    "contingency_table": [
+      [
+        14,
+        1
+      ],
+      [
+        3,
+        12
+      ]
+    ],
+    "sx_rate": 0.9333,
+    "s0_rate": 0.2,
+    "odds_ratio": 56.0,
+    "p_value": 0.000116,
     "significant_005": true
   },
   "s3_vs_s0_sonnet": {
@@ -123,16 +137,18 @@
     "comparison": "S3 vs S0",
     "contingency_table": [
       [
-        14,
-        20
+        15,
+        0
       ],
       [
-        1,
-        33
+        3,
+        12
       ]
     ],
-    "odds_ratio": 23.1,
-    "p_value": 0.00022172374698071923,
+    "sx_rate": 1.0,
+    "s0_rate": 0.2,
+    "odds_ratio": "Infinity",
+    "p_value": 1.1e-05,
     "significant_005": true
   },
   "s4_vs_s0_sonnet": {
@@ -140,16 +156,18 @@
     "comparison": "S4 vs S0",
     "contingency_table": [
       [
-        12,
-        22
+        13,
+        2
       ],
       [
-        1,
-        33
+        3,
+        12
       ]
     ],
-    "odds_ratio": 18.0,
-    "p_value": 0.0012478684196650723,
+    "sx_rate": 0.8667,
+    "s0_rate": 0.2,
+    "odds_ratio": 26.0,
+    "p_value": 0.000679,
     "significant_005": true
   },
   "s5_vs_s0_sonnet": {
@@ -157,16 +175,18 @@
     "comparison": "S5 vs S0",
     "contingency_table": [
       [
-        12,
-        22
+        13,
+        2
       ],
       [
-        1,
-        33
+        3,
+        12
       ]
     ],
-    "odds_ratio": 18.0,
-    "p_value": 0.0012478684196650723,
+    "sx_rate": 0.8667,
+    "s0_rate": 0.2,
+    "odds_ratio": 26.0,
+    "p_value": 0.000679,
     "significant_005": true
   }
 }
